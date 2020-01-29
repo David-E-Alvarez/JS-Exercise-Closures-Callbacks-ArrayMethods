@@ -144,6 +144,8 @@ function processProduct(num1, num2, callback) {
 */
 function processContains(item, list, callback) {
   /* CODE HERE */
+  const booleanVar = list.includes(item);
+  return callback(booleanVar);
 }
 
 /**
@@ -167,8 +169,8 @@ function processContains(item, list, callback) {
 */
 function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-  const removedDuplicatesArray = list.filter((item, index) => {
-    return list.indexOf(item) === index;
+  const removedDuplicatesArray = list.filter(function(item, index){
+    return list.indexOf(item) === index; 
   });
   return callback(removedDuplicatesArray);
 }
