@@ -193,10 +193,13 @@ function processDuplicateFree(list, callback) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  const newArray = runners.map(function(item){
+    return `${item.last_name}, ${item.first_name}`;
+  });
+  return newArray;
 }
-
 /**
  * ### Challenge `firstNamesAllCaps`
  * 
@@ -209,7 +212,7 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
 }
 
