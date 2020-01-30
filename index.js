@@ -169,7 +169,7 @@ function processContains(item, list, callback) {
 */
 function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-  const removedDuplicatesArray = list.filter(function(item, index){
+  const removedDuplicatesArray = list.filter((item, index) => {
     return list.indexOf(item) === index; 
   });
   return callback(removedDuplicatesArray);
@@ -195,7 +195,7 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
   /* CODE HERE */
-  const newArray = runners.map(function(item){
+  const newArray = runners.map((item) =>{
     return `${item.last_name}, ${item.first_name}`;
   });
   return newArray;
@@ -277,11 +277,13 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
+  var count = 0;
   function counter() {
-    ++count
+    ++count;
+    return count;
   }
   // BROKEN CODE ENDS
+  console.log(count);
 }
 
 /**
@@ -304,8 +306,12 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
+  var counter = 0;
+  for(var i = 0; i < maxValue; i++){
+    counter = counter + 1;
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
