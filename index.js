@@ -277,13 +277,12 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  var count = 0;
-  function counter() {
-    ++count;
+  var count = -1;
+  return function counter() {
+    count = count + 1;
     return count;
   }
   // BROKEN CODE ENDS
-  console.log(count);
 }
 
 /**
@@ -308,10 +307,18 @@ function counterMaker() {
 */
 function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
-  var counter = 0;
-  for(var i = 0; i < maxValue; i++){
-    counter = counter + 1;
+  var count = -1;
+  return function counter() {
+    count = count + 1;
+    if(count < maxValue){
+      return count;
+    }
+    if(count > maxValue){
+      count = count + 1;
+    }
+   
   }
+  
 }
 
 /////////////// END OF CHALLENGE ///////////////
